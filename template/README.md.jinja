@@ -98,4 +98,4 @@ Code: MIT (see [LICENSE](LICENSE)). Data: {{ dataset_license }}, © its owners. 
 ## Author
 
 **{{ author_name }}**, data scientist in energy (oil & gas).
-[Portfolio](https://naufalma.com/projects/{{ portfolio_slug }}) · [GitHub](https://github.com/{{ github_user }})
+{% if portfolio_url %}[Portfolio]({{ portfolio_url }}/projects/{{ portfolio_slug }}) · {% endif %}[GitHub](https://github.com/{{ github_user }}) · [LinkedIn](https://www.linkedin.com/in/naufal-muhamad-adzkia/)

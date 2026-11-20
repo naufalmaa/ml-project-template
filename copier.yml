@@ -51,6 +51,11 @@ portfolio_slug:
   help: Slug used on naufalma website (/projects/<slug>)
   default: "{{ project_slug }}"
 
+portfolio_url:
+  type: str
+  help: Base URL of your portfolio website (leave empty if not live yet)
+  default: ""
+
 author_name:
   type: str
   default: Naufal MA
