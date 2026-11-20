@@ -1,0 +1,68 @@
+# Copier template for Naufal MA's ML portfolio projects.
+# Usage:  uvx copier copy --trust ../ml-project-template ./<project_slug>
+# Update: cd <project_slug> && uvx copier update --trust
+
+_subdirectory: template
+_answers_file: .copier-answers.yml
+
+project_name:
+  type: str
+  help: Human-readable project name (e.g. "Oil-Well Event Early Warning")
+
+project_slug:
+  type: str
+  help: Repo / folder name, kebab-case
+  default: "{{ project_name | lower | replace(' ', '-') | replace('_', '-') }}"
+
+package_name:
+  type: str
+  help: Python package name, snake_case
+  default: "{{ project_slug | replace('-', '_') }}"
+
+tagline:
+  type: str
+  help: One-sentence value proposition shown under the README title
+
+problem_type:
+  type: str
+  help: Main ML task
+  choices:
+    - event-detection
+    - forecasting
+    - classification
+    - regression
+    - mlops
+    - agent
+
+dataset_name:
+  type: str
+  help: Dataset name (e.g. "3W Dataset 2.0.0 (Petrobras)")
+
+dataset_url:
+  type: str
+  help: Official dataset URL
+
+dataset_license:
+  type: str
+  help: Dataset licence (e.g. "CC BY 4.0")
+
+portfolio_slug:
+  type: str
+  help: Slug used on naufalma website (/projects/<slug>)
+  default: "{{ project_slug }}"
+
+author_name:
+  type: str
+  default: Naufal MA
+
+github_user:
+  type: str
+  default: naufalmaa
+
+python_version:
+  type: str
+  default: "3.12"
+
+year:
+  type: str
+  default: "2026"
